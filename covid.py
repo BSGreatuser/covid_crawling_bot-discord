@@ -4,8 +4,9 @@
 ###################
 
 import discord
-import BeautifulSoup
+from bs4 import BeautifulSoup
 import requests
+import urllib
 
 client = discord.Client()
 
