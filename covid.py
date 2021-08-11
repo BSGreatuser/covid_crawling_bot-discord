@@ -8,14 +8,12 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print("봇이 성공적으로 실행되었습니다.")
-    game = discord.Game('★~하는중에 표시될 네임 작성★')
-    await client.change_presence(status=discord.Status.online, activity=game)
+    print(client.user)
 
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!코로나'):
+    if message.content == '!코로나':
         url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
         html = urllib.request.urlopen(url)
         soup = BeautifulSoup(html, "html.parser")
